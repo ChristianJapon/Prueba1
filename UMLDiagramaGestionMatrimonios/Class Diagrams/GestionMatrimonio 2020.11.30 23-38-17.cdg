@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GestionMatrimonio">
+  <ClassDiagramComponents>
+    <Class name="GestionMatrimonio" package="gestionmatrimonio" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstracControlador" package="ups.edu.ec.controlador" visibility="public" isAbstract="true" xPosition="145.0" yPosition="889.0">
+      <Fields>
+        <Field name="lista" type="List&lt;E&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="guardarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="crear" returnType="boolean" visibility="public">
+          <Argument type="E" name="objeto"/>
+        </Method>
+        <Method name="buscar" returnType="E" visibility="public">
+          <Argument type="E" name="comparacion"/>
+        </Method>
+        <Method name="eliminar" returnType="boolean" visibility="public">
+          <Argument type="E" name="objeto"/>
+        </Method>
+        <Method name="buscarPosicion" returnType="int" visibility="public">
+          <Argument type="E" name="comparacion"/>
+        </Method>
+        <Method name="actualizar" returnType="boolean" visibility="public">
+          <Argument type="E" name="objeto"/>
+        </Method>
+        <Method name="getLista" returnType="List&lt;E&gt;" visibility="public"/>
+        <Method name="setLista" returnType="void" visibility="public">
+          <Argument type="List&lt;E&gt;" name="lista"/>
+        </Method>
+        <Method name="validar" returnType="boolean" visibility="public" isAbstract="true">
+          <Argument type="E" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControladorMatrimonio" package="ups.edu.ec.controlador" visibility="public" xPosition="148.0" yPosition="713.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="validar" returnType="boolean" visibility="public">
+          <Argument type="Matrimonio" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControladorPersona" package="ups.edu.ec.controlador" visibility="public" xPosition="1017.0" yPosition="1002.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="validar" returnType="boolean" visibility="public">
+          <Argument type="Persona" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Matrimonio" package="ups.edu.ec.modelo" visibility="public" xPosition="-15.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="fecha" type="String" visibility="private"/>
+        <Field name="Lugar" type="String" visibility="private"/>
+        <Field name="esposo" type="String" visibility="private"/>
+        <Field name="esposa" type="String" visibility="private"/>
+        <Field name="sutoridad" type="String" visibility="private"/>
+        <Field name="listaPersona" type="List&lt;Persona&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="String" name="Lugar"/>
+          <Argument type="String" name="esposo"/>
+          <Argument type="String" name="esposa"/>
+          <Argument type="String" name="sutoridad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getFecha" returnType="String" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="String" name="fecha"/>
+        </Method>
+        <Method name="getLugar" returnType="String" visibility="public"/>
+        <Method name="setLugar" returnType="void" visibility="public">
+          <Argument type="String" name="Lugar"/>
+        </Method>
+        <Method name="getEsposo" returnType="String" visibility="public"/>
+        <Method name="setEsposo" returnType="void" visibility="public">
+          <Argument type="String" name="esposo"/>
+        </Method>
+        <Method name="getEsposa" returnType="String" visibility="public"/>
+        <Method name="setEsposa" returnType="void" visibility="public">
+          <Argument type="String" name="esposa"/>
+        </Method>
+        <Method name="getSutoridad" returnType="String" visibility="public"/>
+        <Method name="setSutoridad" returnType="void" visibility="public">
+          <Argument type="String" name="sutoridad"/>
+        </Method>
+        <Method name="getListaPersona" returnType="List&lt;Persona&gt;" visibility="public"/>
+        <Method name="setListaPersona" returnType="void" visibility="public">
+          <Argument type="List&lt;Persona&gt;" name="listaPersona"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="ups.edu.ec.modelo" visibility="public" xPosition="803.0" yPosition="-18.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="cedula" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="fechanacimiento" type="String" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+        <Field name="matricidio" type="Matrimonio" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="fechanacimiento"/>
+          <Argument type="String" name="genero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="setCedula" returnType="void" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getFechanacimiento" returnType="String" visibility="public"/>
+        <Method name="setFechanacimiento" returnType="void" visibility="public">
+          <Argument type="String" name="fechanacimiento"/>
+        </Method>
+        <Method name="getGenreo" returnType="String" visibility="public"/>
+        <Method name="setGenreo" returnType="void" visibility="public">
+          <Argument type="String" name="genreo"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getMatricidio" returnType="Matrimonio" visibility="public"/>
+        <Method name="setMatricidio" returnType="void" visibility="public">
+          <Argument type="Matrimonio" name="matricidio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterfazDatosReserva" package="ups.edu.ec.vista" visibility="public" xPosition="1946.0" yPosition="775.0">
+      <Fields>
+        <Field name="ip" type="InterfazPersona" visibility="private"/>
+        <Field name="controladorMatrimonio" type="ControladorMatrimonio" visibility="package"/>
+        <Field name="controladorPersonas" type="ControladorPersona" visibility="package"/>
+        <Field name="ruta" type="String" visibility="public" isStatic="true"/>
+        <Field name="ruta2" type="String" visibility="public" isStatic="true"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="package"/>
+        <Field name="valor" type="boolean" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel16" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jtable0" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtautoridad" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtautoridad0" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtesposa0" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtesposo0" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtfecha0" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtid0" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtlugar0" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="listarDatos" returnType="void" visibility="public"/>
+        <Method name="CrearModelo" returnType="void" visibility="private"/>
+        <Method name="verificaresposo" returnType="void" visibility="public"/>
+        <Method name="verificaresposa" returnType="void" visibility="public"/>
+        <Method name="verificarautoridad" returnType="void" visibility="public"/>
+        <Method name="registromatrimonio" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowClosing" returnType="void" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="buscaPersonas" returnType="boolean" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterfazGeneral" package="ups.edu.ec.vista" visibility="public" xPosition="1734.0" yPosition="228.0">
+      <Fields>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterfazPersona" package="ups.edu.ec.vista" visibility="public" xPosition="941.0" yPosition="1353.0">
+      <Fields>
+        <Field name="controladorPersona" type="ControladorPersona" visibility="package"/>
+        <Field name="ruta" type="String" visibility="public" isStatic="true"/>
+        <Field name="M" type="DefaultTableModel" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jtable1" type="javax.swing.JTable" visibility="public"/>
+        <Field name="txtapellido" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtcedula" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtdireccion" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtfechanacimiento" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtgenero" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtid" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtnombre" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="void" visibility="private"/>
+        <Method name="txtidActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowClosing" returnType="void" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="CrearModelo" returnType="void" visibility="private"/>
+        <Method name="tomarDatosPersona" returnType="void" visibility="public"/>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="listarDatos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="ups.edu.ec.modelo.Matrimonio" target="ups.edu.ec.modelo.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ups.edu.ec.controlador.ControladorMatrimonio" target="ups.edu.ec.controlador.AbstracControlador"/>
+    <HasRelation name="listaPersona" source="ups.edu.ec.modelo.Matrimonio" target="ups.edu.ec.modelo.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Persona&gt;"/>
+    <IsRelation name="is" source="ups.edu.ec.controlador.ControladorPersona" target="ups.edu.ec.controlador.AbstracControlador"/>
+    <HasRelation name="matricidio" source="ups.edu.ec.modelo.Persona" target="ups.edu.ec.modelo.Matrimonio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorPersona" source="ups.edu.ec.vista.InterfazPersona" target="ups.edu.ec.controlador.ControladorPersona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorPersonas" source="ups.edu.ec.vista.InterfazDatosReserva" target="ups.edu.ec.controlador.ControladorPersona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ups.edu.ec.modelo.Persona" target="ups.edu.ec.modelo.Matrimonio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ups.edu.ec.controlador.ControladorPersona" target="ups.edu.ec.modelo.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ip" source="ups.edu.ec.vista.InterfazDatosReserva" target="ups.edu.ec.vista.InterfazPersona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ups.edu.ec.controlador.ControladorMatrimonio" target="ups.edu.ec.modelo.Matrimonio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorMatrimonio" source="ups.edu.ec.vista.InterfazDatosReserva" target="ups.edu.ec.controlador.ControladorMatrimonio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
